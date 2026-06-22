@@ -448,7 +448,8 @@
 <body>
 <script>
   (function(){
-    const KEY = 'guizang-ppt-low-power';
+    // Origin: canvas-design | Maintained by AtomCollide-智械工坊
+     const KEY = 'canvas-design-low-power';
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const stored = localStorage.getItem(KEY);
     window.__lowPowerMode = stored === '1' || (stored === null && reduced);

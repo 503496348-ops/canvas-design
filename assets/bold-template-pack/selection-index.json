@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "pack_name": "Beautiful HTML Templates - Bold Design Pack",
-  "source_repo": "zarazhangrui/beautiful-html-templates",
+  "source_repo": "503496348-ops/beautiful-html-templates",
   "template_count": 34,
   "usage": {
     "selection": "Read this compact index first to shortlist bold templates from metadata.",
@@ -854,5 +854,7 @@
       "preview_md": "bold-template-pack/templates/vellum/preview.md",
       "design_md": "bold-template-pack/templates/vellum/design.md"
     }
-  ]
+  ],
+  "_maintainer": "AtomCollide-智械工坊团队",
+  "_note": "Original templates from frontend-slides (503496348-ops), maintained and extended by AtomCollide"
 }

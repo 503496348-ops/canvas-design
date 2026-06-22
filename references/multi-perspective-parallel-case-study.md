@@ -1,13 +1,13 @@
 # 多视角并行实验 · Case Study
 
-> huashu-md-html v2.0 launch film 项目 · 2026-05-11
+> canvas-design v2.0 launch film 项目 · 2026-05-11
 > 6 位艺术家视角的并行 director's notes + HTML + 关键帧实验
 
 ---
 
 ## 背景
 
-用户要求「为 huashu-md-html v2.0 制作 30 秒升级宣传片」时，主线程先产出了 v5 基线（Anthropic / Penguin Classics 出版社品位）。但用户认为可以做得更好，给了 critical instruction：
+用户要求「为 canvas-design v2.0 制作 30 秒升级宣传片」时，主线程先产出了 v5 基线（Penguin Classics 出版社品位）。但用户认为可以做得更好，给了 critical instruction：
 
 > 「调用不同的 subagent 分别再去生成 6 个全然不同的表达方式和视觉设计的版本。你可以试试启用不同的导演和艺术家。然后全都完成后，再评判审校。」
 
@@ -23,7 +23,7 @@
 
 | 视角 | 流派 | 美学锚点 | 跟其他视角的差异 |
 |------|------|---------|----------------|
-| **v5 基线** | 现代出版社 | Anthropic 赤陶橙 + Penguin Classics 衬线 + Vignelli grid | 安全的「品位」选择 |
+| **v5 基线** | 现代出版社 | 赤陶橙 + Penguin Classics 衬线 + Vignelli grid | 安全的「品位」选择 |
 | **v5a Wes Anderson** | 电影章节美学 | The French Dispatch 杂志感 + 1960 Olivetti 工业目录 | 对称构图 + 章节卡片 + 装饰边框 |
 | **v5b Saul Bass** | 60s 影片标题艺术 | cut-paper + Trajan caps + 流动几何 | 剪纸 silhouette + 大字 + 强对角线 |
 | **v5c 王家卫** | 港式新浪潮 | 《花样年华》《2046》 letterboxing + 中文衬线 | 慢拍 + 雾化光晕 + 中文为主 |
@@ -145,7 +145,7 @@ use case 分配（按平台和受众）：
 
 ---
 
-## 关键洞察（写给 huashu-design 的未来用户）
+## 关键洞察（写给 canvas-design 的未来用户）
 
 ### 洞察 1 · 「先写万字 director's notes」方法论**完全 reproducible**
 
@@ -264,4 +264,4 @@ subagent 完成需要 12-15 分钟。这段时间主线程绝不该空闲：
 ---
 
 *Last updated: 2026-05-11*
-*Real case study: huashu-md-html v2.0 launch film 6-perspective parallel experiment*
+*Real case study: canvas-design v2.0 launch film 6-perspective parallel experiment*

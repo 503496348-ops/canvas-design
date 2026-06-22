@@ -55,7 +55,7 @@
 ## 内容详情
 
 ### 公众号封面（cover/）
-- 内容：Claude Code Agent 工作流 — 8 个并行 Agent 架构
+- 内容：Hermes Agent Agent 工作流 — 8 个并行 Agent 架构
 - Pentagram：巨大红色「8」+ 瑞士网格线 + 数据条
 - Build：超细字重「Agent」悬浮于 70% 留白中 + 暖金细线
 - Takram：8 节点放射状流程图作为艺术品 + 米色底

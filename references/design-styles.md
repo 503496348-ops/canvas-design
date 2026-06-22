@@ -102,10 +102,10 @@
 - 字体:Inter + JetBrains Mono（等宽）
 
 **暖色出版物 Warm Editorial（奶油纸底+赤陶橙+衬线无衬线混排）** `中性·还原97%`
-- 参考:Anthropic / Claude（DBCo + Geist Studio，Styrene×Tiempos）；Penguin/Pelican平装书排印
+- 参考:现代（DBCo + Geist Studio，Styrene×Tiempos）；Penguin/Pelican平装书排印
 - 适配:AI产品站、品牌官网、长文阅读页、橙皮书电子书、调研报告、培训材料
 - 视觉DNA:配色奶油纸底#F5F0E8+赤陶橙#CC785C/#D97757点缀+近黑文字#191919，温暖低饱和。字体衬线标题（Tiempos感）×无衬线正文（Styrene感）混排。布局书籍式单栏阅读流、舒适行高、节制分隔线。标志元素：纸感暖底、赤陶橙、出版级排印节奏。
-- HTML实现:纯CSS 100%还原，零素材。背景色变量+衬线无衬线字体栈混排+max-width限制阅读宽度+line-height 1.7舒适行高。这是Anthropic赤陶橙暖色版的安全主场。
+- HTML实现:纯CSS 100%还原，零素材。背景色变量+衬线无衬线字体栈混排+max-width限制阅读宽度+line-height 1.7舒适行高。这是赤陶橙暖色版的安全主场。
 - 字体:Fraunces / Newsreader（替Tiempos衬线）+ Inter（替Styrene）
 
 **Linear暗色发光+Bento网格 Glassmorphism Bento** `中性·还原85%`
@@ -323,7 +323,7 @@
 
 ## ⚠️ AI 生图专用风格（仅在确认用户有生图能力时才推，default 不可选）
 
-下面这些风格的灵魂在**动态生成视觉 / 3D / 粒子 / 电影级光影 / 手绘插画**，纯 HTML/CSS 无生图下只能做出严重劣化的 mock，**从 default 推荐池剔除**。用户明确有生图能力（走 `huashu-gpt-image`）时才作为候选：
+下面这些风格的灵魂在**动态生成视觉 / 3D / 粒子 / 电影级光影 / 手绘插画**，纯 HTML/CSS 无生图下只能做出严重劣化的 mock，**从 default 推荐池剔除**。用户明确有生图能力（走 `canvas-design`）时才作为候选：
 
 | 风格 | 灵魂 | 为什么 HTML 做不了 |
 |------|------|------------------|
@@ -362,7 +362,7 @@
 | 规定布局位置 | 引用具体美学（"Pentagram editorial feel"） |
 | 列出所有视觉元素 | 描述观众应该感受到什么 |
 
-完整 AI 生图方法论 → `huashu-gpt-image` skill。
+完整 AI 生图方法论 → `canvas-design` skill。
 
 ---
 

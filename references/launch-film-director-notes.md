@@ -10,7 +10,7 @@
 
 ## 1. 为什么先写 director's notes
 
-实战教训（2026-05-11 huashu-md-html v2.0 项目）：
+实战教训（2026-05-11 canvas-design v2.0 项目）：
 
 第一轮直接动手写 HTML，产出的是「程序员视角的动画」——每个 capability 平均用力、节奏匀速、slogan 撞在一起、缺少叙事弧。
 第二轮接到用户「停下，先按苹果导演视角写 1 万字分镜脚本」的指令，写了 v5-director-notes.md（11500 字、13 镜 shot-by-shot spec），然后按脚本实施——一次过、每帧 pause 都耐看、节奏起伏有 climax。
@@ -27,7 +27,7 @@
 
 1. **这支片承担品牌叙事吗？**（有 thesis / slogan reveal / 升级仪式感）—— 是 → 走 director's notes 流程
 2. **观众会暂停看吗？**（可能截图、做 X 海报、做封面、慢速 review）—— 是 → 每帧要耐看
-3. **客户/用户有「我希望像 XXX 那样」的参照？**（Apple / Anthropic / Nike / Penguin / 某导演）—— 是 → 必须明确视觉语境
+3. **客户/用户有「我希望像 XXX 那样」的参照？**（Apple / Nike / Penguin / 某导演）—— 是 → 必须明确视觉语境
 
 任一为「是」就走流程。三个都「否」就跳过，直接用 [animations.md](animations.md) 的标准流程。
 
@@ -206,10 +206,10 @@ done
 
 复杂项目（如 launch film 选不出方向 / 想看多个美学差异 / 客户没拍板风格）可以**启动多个 subagent 并行做不同导演视角的版本**。
 
-实战配置（2026-05-11 huashu-md-html 项目，并行 6 个版本）：
+实战配置（2026-05-11 canvas-design 项目，并行 6 个版本）：
 
 ```
-v5  · 基线（Anthropic / Penguin Classics 出版社品位）
+v5  · 基线（Penguin Classics 出版社品位）
 v5a · Wes Anderson（对称 + 复古 + 章节卡片）
 v5b · Saul Bass（剪纸 + 60s 大字 + 几何切割）
 v5c · 王家卫（中文衬线 + 慢动作 + 怀旧）
@@ -290,4 +290,4 @@ v5f · 草间彌生 Yayoi Kusama（圆点 + 重复 + 单一强色）
 ---
 
 *最后修订：2026-05-11*
-*真实案例：huashu-md-html v2.0 launch film（v5-director-notes.md）*
+*真实案例：canvas-design v2.0 launch film（v5-director-notes.md）*

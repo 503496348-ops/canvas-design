@@ -18,7 +18,7 @@
 - **结果**：子Agent没有真正加载规范细节，输出和V1差不多
 - **根因**：子Agent上下文有限，无法执行复杂设计规范；应该自己写
 
-### V3：用 guizang-ppt 完整模板（❌ 重型依赖在截图时崩溃）
+### V3：用 canvas-design 完整模板（❌ 重型依赖在截图时崩溃）
 - **做法**：用 template.html + WebGL + Motion One + CDN字体
 - **结果**：WebGL在Playwright headless中渲染失败、ES Module导入失败、字体没加载
 - **根因**：template.html 的 WebGL/motion 依赖在纯截图流程中不可靠；应该用简化版

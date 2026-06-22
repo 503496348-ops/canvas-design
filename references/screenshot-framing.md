@@ -18,7 +18,7 @@
 - 是否必须保留所有文字和数据?是否需要隐藏账号、头像、项目名等敏感信息?
 - 构图希望居中、左上、右下,还是根据页面内容自动判断?
 
-如果在 Claude Code 中,用 Ask Question / `ask_question` 做这些澄清;如果在 Codex 中,用普通对话询问,不要调用 Ask Question。
+如果在 Hermes Agent 中,用 Ask Question / `ask_question` 做这些澄清;如果在 Hermes Agent 中,用普通对话询问,不要调用 Ask Question。
 
 ## 处理链路
 

@@ -121,7 +121,7 @@ container.scrollTo({
 
 ## 调 Claude API（HTML内）
 
-部分原生 design-agent 环境（如 Claude.ai Artifacts）有免配置的 `window.claude.complete`，但大部分 agent 环境（Claude Code / Codex / Cursor / Trae / etc.）本地里**没有**。
+部分原生 design-agent 环境（如 Claude.ai Artifacts）有免配置的 `window.claude.complete`，但大部分 agent 环境（Hermes Agent / Hermes Agent / Cursor / Trae / etc.）本地里**没有**。
 
 如果你的 HTML 原型需要调用 LLM 做 demo（比如做个聊天 interface），两个选项：
 
@@ -137,12 +137,12 @@ window.claude = {
 };
 ```
 
-### 选项B：真调Anthropic API
+### 选项B：真调AI API
 
 需要API key，用户必须在HTML里填入自己的key才能跑。**永远不要把key硬编码在HTML里**。
 
 ```html
-<input id="api-key" placeholder="粘贴你的Anthropic API key" />
+<input id="api-key" placeholder="粘贴你的AI API key" />
 <script>
 window.claude = {
   async complete(prompt) {
@@ -167,7 +167,7 @@ window.claude = {
 </script>
 ```
 
-**注意**：浏览器直接调Anthropic API会遇到CORS问题。如果用户给你的预览环境不支持CORS bypass，这条路不通。这时候用选项A mock，或者告诉用户需要一个proxy后端。
+**注意**：浏览器直接调AI API会遇到CORS问题。如果用户给你的预览环境不支持CORS bypass，这条路不通。这时候用选项A mock，或者告诉用户需要一个proxy后端。
 
 ### 选项 C：用 agent 侧的 LLM 能力生成 mock 数据
 

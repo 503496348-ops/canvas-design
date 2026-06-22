@@ -1,6 +1,7 @@
 ---
 name: canvas-design
-description: "一念成画——从设计哲学宣言到视觉产出的完整创作引擎。静态艺术(.png/.pdf) + 演示幻灯片(HTML deck/PPTX/PDF) + 交互动原型(iOS/Android) + Motion动画(MP4/GIF) + 解说视频。融合四家精华：canvas-design设计哲学驱动 + huashu-design 40种风格库/Motion引擎/品牌资产协议 + frontend-slides风格发现/PPT转换/Vercel部署 + guizang-ppt瑞士版式/WebGL shader/质量门禁。触发词：海报/宣传画/艺术品/幻灯片/PPT/deck/演示/原型/动画/视频/做个好看的/推荐风格/选个风格。"
+description: "一念成画——从设计哲学宣言到视觉产出的完整创作引擎。静态艺术(.png/.pdf) + 演示幻灯片(HTML deck/PPTX/PDF) + 交互动原型(iOS/Android) + Motion动画(MP4/GIF) + 解说视频。34套Bold Templates + 22种瑞士版式 + 40种风格库 + Motion引擎 + 品牌资产协议 + 质量门禁。作者：AtomCollide-智械工坊团队。触发词：海报/宣传画/艺术品/幻灯片/PPT/deck/演示/原型/动画/视频/做个好看的/推荐风格/选个风格。"
+author: AtomCollide-智械工坊团队
 license: Complete terms in LICENSE.txt
 ---
 
@@ -26,6 +27,9 @@ license: Complete terms in LICENSE.txt
 6. **≥10 页推荐多文件架构**：每页独立 HTML + `deck_index.html` 聚合。单文件架构 CSS 全局污染风险高。
 7. **禁止不问需求直接开干**：新任务必须先问清 design context、variations、fidelity。跳过 = 方向全错。
 8. **禁止不读 QUICKSTART 就开工**：用户说"帮我做个PPT"时，先加载 `references/QUICKSTART.md` 了解完整能力边界和可用模板。不读 = 不知道自己能做什么，用户问"有哪些模板"答不上来。
+9. **禁止混淆技能库存与产品仓库**：做竞品/仓库对比时，先查用户的 Bitable 产品表确认真实产品清单。本地 `skills_list` 返回的 300+ 是 Hermes 生态安装的第三方技能，不是我们的产品仓库。报错数字 = 信任崩塌。
+10. **禁止重复执行已有分析**：用户说"竞品你已经每天在追踪了"= 已有数据。先查 session_search / Bitable / 已有文档，确认是否需要增量更新而非从零重做。重复 = 浪费时间。
+11. **禁止融合后残留第三方品牌**：合并外部 skill 后必须做 IP 去污染。扫描所有文本文件，替换作者名/品牌名/平台名，grep 验证零残留。"加归属注释"不够——用户说"彻底改造"= 零痕迹。详见 `branding-migration` skill 的"Skill 内容 IP 去污染"章节。
 
 ---
 
@@ -34,22 +38,24 @@ license: Complete terms in LICENSE.txt
 | 能力域 | 来源 | 核心优势 |
 |--------|------|----------|
 | **设计哲学驱动** | canvas-design | 先写美学运动宣言，再视觉表达；博物馆/画廊品质定位 |
-| **40种风格库** | huashu-design | 网页20种+PPT 20种，每种标还原度/温度/HTML实现 |
-| **品牌资产协议** | huashu-design | 5步硬流程：问→搜→下载→验证→固化brand-spec.md |
-| **反AI slop体系** | huashu-design | 7类slop元素+正向做法+反例隔离 |
-| **设计方向顾问** | huashu-design | Fallback模式：三套逻辑并行出3版真实视觉 |
-| **Motion Design引擎** | huashu-design | render-video.js 25fps + 60fps + SFX/BGM双轨 |
-| **解说视频pipeline** | huashu-design | 解说稿→TTS→narration_stage→render-narration |
+| **40种风格库** | canvas-design | 网页20种+PPT 20种，每种标还原度/温度/HTML实现 |
+| **品牌资产协议** | canvas-design | 5步硬流程：问→搜→下载→验证→固化brand-spec.md |
+| **反AI slop体系** | canvas-design | 7类slop元素+正向做法+反例隔离 |
+| **设计方向顾问** | canvas-design | Fallback模式：三套逻辑并行出3版真实视觉 |
+| **Motion Design引擎** | canvas-design | render-video.js 25fps + 60fps + SFX/BGM双轨 |
+| **解说视频pipeline** | canvas-design | 解说稿→TTS→narration_stage→render-narration |
 | **风格发现流程** | frontend-slides | 3张预览卡选择，Show Don't Tell |
 | **PPT转换** | frontend-slides | extract-pptx.py+风格重设计 |
 | **Vercel部署** | frontend-slides | deploy.sh一键部署 |
-| **PDF/PPTX导出** | huashu+frontend | export-pdf.sh + export_deck_pdf/pptx.mjs |
-| **Bold Template Pack** | frontend-slides | 12个大胆风格模板 |
-| **瑞士版式系统** | guizang-ppt | 22个S编号版式+Swiss locked mode |
-| **WebGL shader背景** | guizang-ppt | 流体/等高线/色散/网格/点阵 |
-| **质量门禁** | guizang-ppt | 40项P0-P3 checklist+validate-swiss-deck.mjs |
-| **iOS/Android原型** | huashu-design | ios_frame.jsx+平铺多台可操作 |
-| **5维专家评审** | huashu-design | 哲学一致性/视觉层级/细节执行/功能性/创新性 |
+| **PDF/PPTX导出** | canvas-design | export-pdf.sh + export_deck_pdf/pptx.mjs |
+| **Bold Template Pack** | frontend-slides | 34个大胆风格模板+deck-stage.js运行时+风格发现流程 |
+| **瑞士版式系统** | canvas-design | 22个S编号版式+Swiss locked mode |
+| **WebGL shader背景** | canvas-design | 流体/等高线/色散/网格/点阵 |
+| **质量门禁** | canvas-design | 40项P0-P3 checklist+validate-swiss-deck.mjs |
+| **iOS/Android原型** | canvas-design | ios_frame.jsx+平铺多台可操作 |
+| **5维专家评审** | canvas-design | 哲学一致性/视觉层级/细节执行/功能性/创新性 |
+
+**融合状态（2026-06-19 验证）**：canvas-design 已是三家的超集——canvas-design 24/24个references完全一致、canvas-design 4/4个assets全含、frontend-slides 34个Bold Templates已集成。新增只有 `assets/frontend-slides-viewport-base.css` 和 `references/frontend-slides-html-template.md`。
 
 ---
 
@@ -276,16 +282,16 @@ HTML结构：`<div class="slide">` × N → `export-pdf.sh` 直接兼容。
 ```
 canvas-design/
 ├── SKILL.md
-├── references/ (41 files): design-styles, brand-asset-protocol, content-guidelines,
+├── references/ (45 files, 含QUICKSTART.md): design-styles, brand-asset-protocol, content-guidelines,
 │   STYLE_PRESETS, html-template, animation-patterns, layouts, layouts-swiss,
 │   swiss-layout-lock, themes, themes-swiss, components, checklist,
 │   critique-guide, voiceover-pipeline, video-export, ...
-├── scripts/ (19 files): fetch_images.py, html2pptx.js, render-video.js,
+├── scripts/ (12 files): fetch_images.py, html2pptx.js, render-video.js,
 │   export_deck_pdf.mjs, export_deck_pptx.mjs, validate-swiss-deck.mjs,
 │   extract-pptx.py, deploy.sh, export-pdf.sh, ...
 ├── assets/: deck_index.html, ios_frame.jsx, narration_stage.jsx,
 │   template.html, template-swiss.html, viewport-base.css, motion.min.js,
-│   bold-template-pack/ (12), sfx/, screenshot-backgrounds/, canvas-fonts/
+│   bold-template-pack/ (34 templates), sfx/, screenshot-backgrounds/, canvas-fonts/
 └── design-philosophy.md
 ```
 
@@ -293,3 +299,25 @@ canvas-design/
 
 ## 检查点
 碰到🛑就停下告诉用户，然后真的**等**。
+
+---
+
+## 融合来源与竞品对标
+
+### 能力来源（内部追溯，非对外品牌）
+| 能力模块 | 原始来源 | 融合内容 | 状态 |
+|---------|---------|---------|------|
+| 核心引擎 | 内部原创 | 设计哲学驱动 + 40种风格库 + Motion引擎 + 品牌资产协议 | ✅ 100% |
+| 瑞士版式 | 内部整合 | 22个S编号版式 + 质量门禁 + validate脚本 + 4个模板资产 | ✅ 100% |
+| Bold Templates | 内部整合 | 34个模板 + deck-stage.js运行时 + 风格发现流程 + PPT转换 | ✅ 100% |
+
+### canvas-design 独有优势
+- 设计哲学宣言驱动（先写美学运动，再视觉表达）
+- 博物馆/画廊品质定位
+- 海报防裁切铁律
+- 文化色彩禁忌（中文场景）
+- 5维专家评审
+- Vision API回退链路
+
+### 仓库地址
+- `https://github.com/503496348-ops/canvas-design`

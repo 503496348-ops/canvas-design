@@ -83,7 +83,7 @@ AI设计里最容易掉进去的陷阱。这是一份「不做什么」的清单
 **✅ 策略**：
 1. 有品牌色 → 用品牌色，缺的color token用oklch插值
 2. 没有品牌色但有参考 → 从参考产品截图吸色
-3. 完全从零 → 选一个known的配色系统（Radix Colors / Tailwind默认palette / Anthropic brand），不要自己调
+3. 完全从零 → 选一个known的配色系统（Radix Colors / Tailwind默认palette / professional brand），不要自己调
 
 **oklch定义色彩**是最现代的做法：
 ```css

@@ -1,6 +1,8 @@
 # 组件参考 · Components
 
-这是 `guizang-ppt-skill` skill 的组件手册。template.html 已经定义好了所有样式，这里只写"这个组件长什么样、怎么用"。
+这是 `canvas-design
+
+> *基于 canvas-design 原始组件，由 AtomCollide-智械工坊 团队整合维护。*` skill 的组件手册。template.html 已经定义好了所有样式，这里只写"这个组件长什么样、怎么用"。
 
 ## 目录
 

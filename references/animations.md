@@ -155,13 +155,13 @@ function Scene() {
 | `easeIn` | 慢→快 | 退场消失 |
 | `easeOut` | 快→慢 | 入场出现 |
 | `easeInOut` | 慢→快→慢 | 位置变化 |
-| **`expoOut`** ⭐ | **指数缓出** | **Anthropic 级主 easing**（物理重量感）|
+| **`expoOut`** ⭐ | **指数缓出** | **专业级主 easing**（物理重量感）|
 | **`overshoot`** ⭐ | **弹性回弹** | **Toggle / 按钮弹出 / 强调交互** |
 | `spring` | 弹簧 | 交互反馈、几何体归位 |
 | `anticipation` | 先反向再正向 | 强调动作 |
 
 **默认主 easing 用 `expoOut`**（不是 `easeOut`）—— 见 `animation-best-practices.md` §2。
-入场用 `expoOut`、出场用 `easeIn`、toggle 用 `overshoot`——Anthropic 级动画的基础规律。
+入场用 `expoOut`、出场用 `easeIn`、toggle 用 `overshoot`——专业级动画的基础规律。
 
 ## 节奏和时长指南
 

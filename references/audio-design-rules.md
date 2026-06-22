@@ -1,7 +1,9 @@
-# 音频设计规则 · huashu-design
+# 音频设计规则 · Canvas Design
+
+> *基于设计师(canvas-design)原始方法论，由 AtomCollide-智械工坊 团队整合维护。*
 
 > 所有动画 demo 的音频应用配方。和 `sfx-library.md`（资产清单）配套使用。
-> 实战锤炼：huashu-design 发布 hero v1-v9 迭代 · Anthropic 三支官方片子的 Gemini 深度拆解 · 8000+ 次 A/B 对比
+> 实战锤炼：canvas-design hero v1-v9 迭代 · 业界标准片子的 Gemini 深度拆解 · 8000+ 次 A/B 对比
 
 ---
 
@@ -20,7 +22,7 @@
 
 ## 金标准 · 黄金配比
 
-这几组数值是实测 Anthropic 三支官方片子 + 我们自己 v9 定版对比得出的**工程硬参数**，直接套用即可：
+这几组数值是实测 业界标准片子 + 我们自己 v9 定版对比得出的**工程硬参数**，直接套用即可：
 
 ### 音量
 - **BGM 音量**：`0.40-0.50`（相对满刻度 1.0）
@@ -29,7 +31,7 @@
 - **amix 参数**：`normalize=0`（绝不用 normalize=1，会把动态范围压平）
 
 ### 频段隔离（P1 硬优化）
-Anthropic 的秘诀不是「SFX 音量大」，是**频段分层**：
+专业动画的秘诀不是「SFX 音量大」，是**频段分层**：
 
 ```bash
 [bgm_raw]lowpass=f=4000[bgm]      # BGM 限制在 <4kHz 的中低频
@@ -49,7 +51,7 @@ Anthropic 的秘诀不是「SFX 音量大」，是**频段分层**：
 ## SFX cue 设计规则
 
 ### 密度（每10秒多少个SFX）
-实测 Anthropic 三支片子的 SFX 密度有三档：
+实测 三支标杆片子的 SFX 密度有三档：
 
 | 片子 | 每10s SFX 数 | 产品性格 | 场景 |
 |---|---|---|---|
@@ -91,7 +93,7 @@ Anthropic 的秘诀不是「SFX 音量大」，是**频段分层**：
 
 ## BGM 选择决策树
 
-huashu-design skill 自带 6 首 BGM（`assets/bgm-*.mp3`）：
+canvas-design skill 自带 6 首 BGM（`assets/bgm-*.mp3`）：
 
 ```
 动画性格是什么？
@@ -103,7 +105,7 @@ huashu-design skill 自带 6 首 BGM（`assets/bgm-*.mp3`）：
 ```
 
 ### 无 BGM 的场景（值得考虑）
-参考 Anthropic Code Desktop（ref-2）：**0 SFX + 纯 Lo-fi BGM** 也能很高级。
+参考专业工具 Desktop（ref-2）：**0 SFX + 纯 Lo-fi BGM** 也能很高级。
 
 **何时选无BGM**：
 - 动画时长 <10s（BGM 建立不起来）
@@ -115,7 +117,7 @@ huashu-design skill 自带 6 首 BGM（`assets/bgm-*.mp3`）：
 
 ## 场景配方（开箱即用）
 
-### 配方 A · 产品发布 hero（huashu-design v9 同款）
+### 配方 A · 产品发布 hero（canvas-design v9 同款）
 ```
 时长：25 秒
 BGM：bgm-tech.mp3 · 45% · 频段 <4kHz
@@ -133,7 +135,7 @@ cue：
 音量：BGM 0.45 / SFX 1.0 · amix normalize=0
 ```
 
-### 配方 B · 工具功能演示（参考 Anthropic Code Desktop）
+### 配方 B · 工具功能演示（参考专业工具 Desktop）
 ```
 时长：30-45 秒
 BGM：bgm-tutorial.mp3 · 50%
@@ -256,5 +258,5 @@ ffmpeg -y -i video.mp4 -i sfx-track.mp3 -i bgm.mp3 \
 
 - SFX 资产清单：`sfx-library.md`
 - 视觉风格参考：`apple-gallery-showcase.md`
-- Anthropic 三支片子深度音频分析：AUDIO-BEST-PRACTICES.md（作者本地资料，未随仓库分发）
-- huashu-design v9 实战案例：hero-animation-v9-final.mp4（作者本地样本，未随仓库分发）
+- 三支标杆片子深度音频分析：AUDIO-BEST-PRACTICES.md（作者本地资料，未随仓库分发）
+- canvas-design v9 实战案例：hero-animation-v9-final.mp4（作者本地样本，未随仓库分发）

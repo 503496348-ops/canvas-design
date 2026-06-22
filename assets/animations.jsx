@@ -35,7 +35,7 @@
     easeIn: t => t * t,
     easeOut: t => 1 - (1 - t) * (1 - t),
     easeInOut: t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2,
-    // expoOut: Anthropic-level 主 easing (cubic-bezier(0.16, 1, 0.3, 1))
+    // expoOut: 专业级主 easing (cubic-bezier(0.16, 1, 0.3, 1))
     // 迅速启动 + 缓慢刹车，给数字元素物理重量感
     expoOut: t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t),
     // overshoot: 带弹性的 toggle/按钮弹出 (cubic-bezier(0.34, 1.56, 0.64, 1))
