@@ -267,7 +267,6 @@ canvas-design/
 |------|----------|----------|
 | **huashu-design** | 40种风格库、Motion Design引擎、品牌资产协议、反AI slop体系 | ✅ 完全集成 |
 | **frontend-slides** | 风格发现流程、34套Bold Templates、Vercel部署 | ✅ 完全集成 |
-| **guizang-ppt-skill** | 22种瑞士版式系统、质量checklist | ✅ 完全集成 |
 | **GPT Image Gen** | 生图API封装、批量生成、风格控制 | ✅ 完全集成 |
 | **Wanderix** | PLOC手账Pipeline、肖像身份锚定、模板注册表 | ✅ 完全集成 |
 
