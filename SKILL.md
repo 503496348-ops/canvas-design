@@ -3,6 +3,13 @@ name: canvas-design
 description: "一念成画——从设计哲学宣言到视觉产出的完整创作引擎。静态艺术(.png/.pdf) + 演示幻灯片(HTML deck/PPTX/PDF) + 交互动原型(iOS/Android) + Motion动画(MP4/GIF) + 解说视频。34套Bold Templates + 22种瑞士版式 + 40种风格库 + Motion引擎 + 品牌资产协议 + 质量门禁。作者：AtomCollide-智械工坊团队。触发词：海报/宣传画/艺术品/幻灯片/PPT/deck/演示/原型/动画/视频/做个好看的/推荐风格/选个风格。"
 author: AtomCollide-智械工坊团队
 license: Complete terms in LICENSE.txt
+
+triggers:
+  - 视觉创作
+  - 海报设计
+  - UI设计
+  - canvas-design
+  - 艺游未境
 ---
 
 # 一念成画 · Canvas Design
