@@ -1,5 +1,6 @@
 ---
 name: canvas-design
+version: 5.0
 description: "视觉创作全链路引擎。海报/PPT/原型/动画/视频一站式生成，34套模板+22种版式+40种风格库。当需要设计海报、制作PPT、生成原型、创建动画时使用。"
 author: AtomCollide-智械工坊团队
 license: Complete terms in LICENSE.txt
