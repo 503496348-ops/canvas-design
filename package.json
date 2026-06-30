@@ -5,9 +5,12 @@
   "description": "Canvas Design visual creation engine: editable PPTX export, deck verification, motion rendering, and source intake utilities.",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "bash tests/smoke-pptx-export.sh",
+    "setup": "node scripts/setup.mjs",
+    "doctor": "node scripts/doctor.mjs",
+    "test": "bash tests/one-click-setup-contract.sh && bash tests/smoke-pptx-export.sh",
     "test:pptx": "bash tests/smoke-pptx-export.sh",
-    "check:syntax": "node --check scripts/export_deck_pptx.mjs && node --check scripts/html2pptx.js && node --check assets/presenter-runtime.js && node --check scripts/render-video.js",
+    "test:one-click": "bash tests/one-click-setup-contract.sh",
+    "check:syntax": "node --check scripts/setup.mjs && node --check scripts/doctor.mjs && node --check scripts/export_deck_pptx.mjs && node --check scripts/html2pptx.js && node --check assets/presenter-runtime.js && node --check scripts/render-video.js",
     "export:pptx": "node scripts/export_deck_pptx.mjs",
     "verify:swiss": "node scripts/validate-swiss-deck.mjs"
   },

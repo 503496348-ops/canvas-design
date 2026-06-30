@@ -331,7 +331,7 @@ canvas-design/
 │   swiss-layout-lock, themes, themes-swiss, components, checklist,
 │   ppt-skills-fusion, editable-pptx, presenter-mode, image-deck-mode,
 │   source-intake-adapter, critique-guide, voiceover-pipeline, video-export, ...
-├── scripts/ (27 files): fetch_images.py, source_intake.py, html2pptx.js,
+├── scripts/ (29 files): fetch_images.py, source_intake.py, html2pptx.js,
 │   render-video.js, export_deck_pdf.mjs, export_deck_pptx.mjs,
 │   validate-swiss-deck.mjs, extract-pptx.py, deploy.sh, export-pdf.sh, ...
 ├── assets/: deck_index.html, presenter-runtime.js, ios_frame.jsx, narration_stage.jsx,

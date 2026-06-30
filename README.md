@@ -39,18 +39,33 @@
 git clone https://github.com/503496348-ops/canvas-design.git ~/.hermes/skills/canvas-design
 ```
 
-### 第2步：安装依赖
+### 第2步：一键开箱安装
 
 ```bash
 cd ~/.hermes/skills/canvas-design
-
-# Node.js 工具链（渲染/导出/验证/PPTX）
-npm install
-npx playwright install chromium
-
-# Python 工具链（PPT提取/生图/流水线，按实际任务安装）
-pip install python-pptx Pillow
+npm run setup
+npm test
 ```
+
+如果你更喜欢复制一条 shell 命令，也可以用：
+
+```bash
+bash install.sh && npm test
+```
+
+`npm run setup` 会自动完成三件事：
+
+1. 安装 Node.js 依赖。
+2. 安装 Playwright Chromium 浏览器。
+3. 运行 `npm run doctor` 做中文环境诊断。
+
+如果失败，直接运行：
+
+```bash
+npm run doctor
+```
+
+它会告诉你缺 Node、npm、Python、浏览器，还是仓库文件不完整。
 
 ### 第3步：第一次使用
 
@@ -70,6 +85,11 @@ AI 会自动执行：
 ### 第4步：常用命令
 
 ```bash
+# 一键安装/诊断/验收
+npm run setup
+npm run doctor
+npm test
+
 # 导出 PDF
 bash scripts/export-pdf.sh ./my-deck.html ./output.pdf
 
@@ -250,7 +270,7 @@ canvas-design/
 │   ├── animations.jsx                # After Effects 动画脚本
 │   └── viewport-base.css             # 幻灯片基础样式
 │
-└── scripts/                          # 工具脚本（27项）
+└── scripts/                          # 工具脚本（29项）
     ├── export-pdf.sh                 # PDF 导出
     ├── export_deck_pdf.mjs           # Deck → PDF（Node.js）
     ├── export_deck_pptx.mjs          # Deck → PPTX
