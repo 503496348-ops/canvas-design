@@ -1,7 +1,7 @@
 ---
 name: canvas-design
 version: 5.0
-description: "视觉创作全链路引擎。海报/PPT/原型/动画/视频一站式生成，34套模板+22种版式+40种风格库。当需要设计海报、制作PPT、生成原型、创建动画时使用。"
+description: "一念成画——视觉创作全链路引擎。静态艺术(.png/.pdf) + 演示幻灯片(HTML deck/PPTX/PDF) + 原生可编辑PPTX + 演讲者模式(逐字稿/计时器) + 图片型社交Deck + 多源资料摄取 + 交互动原型(iOS/Android) + Motion动画(MP4/GIF) + 解说视频。34套Bold Templates + 22种瑞士版式 + 40种风格库 + Motion引擎 + 品牌资产协议 + 质量门禁。当需要设计海报、制作PPT、生成原型、创建动画、导出可编辑PPTX、制作讲稿/逐字稿、生成小红书图文/知识卡片时使用。"
 author: AtomCollide-智械工坊团队
 license: Complete terms in LICENSE.txt
 
@@ -52,18 +52,22 @@ triggers:
 | **设计方向顾问** | canvas-design | Fallback模式：三套逻辑并行出3版真实视觉 |
 | **Motion Design引擎** | canvas-design | render-video.js 25fps + 60fps + SFX/BGM双轨 |
 | **解说视频pipeline** | canvas-design | 解说稿→TTS→narration_stage→render-narration |
-| **风格发现流程** | frontend-slides | 3张预览卡选择，Show Don't Tell |
-| **PPT转换** | frontend-slides | extract-pptx.py+风格重设计 |
-| **Vercel部署** | frontend-slides | deploy.sh一键部署 |
+| **风格发现流程** | canvas-design | 3张预览卡选择，Show Don't Tell |
+| **PPT转换** | canvas-design | extract-pptx.py+风格重设计 |
+| **Vercel部署** | canvas-design | deploy.sh一键部署 |
 | **PDF/PPTX导出** | canvas-design | export-pdf.sh + export_deck_pdf/pptx.mjs |
-| **Bold Template Pack** | frontend-slides | 34个大胆风格模板+deck-stage.js运行时+风格发现流程 |
+| **原生可编辑PPTX** | canvas-design | 960×540pt物理画布 + HTML硬约束 + html2pptx逐元素转原生shape/text/image |
+| **演讲者模式** | canvas-design | presenter-runtime.js：当前页/下一页/逐字稿/计时器/S键双窗口同步 |
+| **图片型社交Deck** | canvas-design | Image Deck Mode：小红书/公众号/课程卡片，一页一图，prompt留痕 |
+| **多源资料摄取** | canvas-design | source_intake.py：URL/MD/TXT/HTML→source-brief.md，B站/PDF等走前置转写/文档技能 |
+| **Bold Template Pack** | canvas-design | 34个大胆风格模板+deck-stage.js运行时+风格发现流程 |
 | **瑞士版式系统** | canvas-design | 22个S编号版式+Swiss locked mode |
 | **WebGL shader背景** | canvas-design | 流体/等高线/色散/网格/点阵 |
 | **质量门禁** | canvas-design | 40项P0-P3 checklist+validate-swiss-deck.mjs |
 | **iOS/Android原型** | canvas-design | ios_frame.jsx+平铺多台可操作 |
 | **5维专家评审** | canvas-design | 哲学一致性/视觉层级/细节执行/功能性/创新性 |
 
-**融合状态（2026-06-19 验证）**：canvas-design 已是三家的超集——canvas-design 24/24个references完全一致、canvas-design 4/4个assets全含、frontend-slides 34个Bold Templates已集成。新增只有 `assets/frontend-slides-viewport-base.css` 和 `references/frontend-slides-html-template.md`。
+**融合状态（2026-06-30 PPT Skills增强）**：已核验并吸收 7 个高星 PPT/Slides 仓库的可落地能力。既有审美与HTML Deck体系已是超集；新增重点落在四个真增量：①原生可编辑PPTX生产线 ②演讲者模式 ③图片型社交Deck ④多源资料摄取适配器。详见 `references/ppt-skills-fusion.md`。
 
 ---
 
@@ -203,6 +207,38 @@ Phase 3 生成(1920×1080固定舞台不可妥协)
 ### PPT转换
 `python scripts/extract-pptx.py`→确认→风格发现→转换
 
+### 原生可编辑 PPTX 路径
+触发：用户说“可编辑PPTX / PowerPoint里继续改 / 客户要改字改图 / 跟随PPT模板”。
+
+硬规则：从第一行 HTML 就按 `references/editable-pptx.md` 写，不能事后把视觉自由HTML硬转PPTX。
+- 画布：`960pt × 540pt`，对应 `LAYOUT_WIDE`
+- 文本：必须包在 `<p>/<h1>-<h6>/<li>`，`div` 不放裸文字
+- 背景/边框：放外层 `div`，不要放文字标签
+- 图片：用 `<img>`，不用 `background-image`
+- 复杂视觉/渐变/WebGL：改走 PDF，不承诺可编辑
+
+导出：`node scripts/export_deck_pptx.mjs --slides ./slides --out deck.pptx`
+
+### 演讲者模式路径
+触发：演讲/分享/路演/讲稿/逐字稿/计时器/speaker notes。
+
+产物：每页 `<aside class="notes">` + `assets/presenter-runtime.js`。主窗口按 `S` 打开讲者窗口，显示当前页、下一页、讲稿、计时器。
+> `references/presenter-mode.md`
+
+### 图片型社交 Deck 路径
+触发：小红书/朋友圈/公众号图文/知识卡片/一页一图/阅读型分享。
+
+原则：一页一个判断，图片优先，文字少，prompt 留痕，可合并为 PDF/PPTX。
+> `references/image-deck-mode.md`
+
+### 多源资料摄取路径
+触发：用户给 URL / B站 / YouTube / PDF / 公众号 / 长文 / 多文件，要求“做成PPT/信息图/课程卡”。
+
+先生成 `source-brief.md`，再进入设计路线。文本/网页可用：
+`python scripts/source_intake.py --input <url-or-file> --out source-brief.md`
+PDF/DOCX/PPTX/音视频先走对应文档/转写工具，再输入本路径。
+> `references/source-intake-adapter.md`
+
 ### 原型路径
 默认单文件inline React+平铺4-6台可交互。iOS框：`assets/ios_frame.jsx`。Playwright测试。
 
@@ -293,11 +329,12 @@ canvas-design/
 ├── references/ (45 files, 含QUICKSTART.md): design-styles, brand-asset-protocol, content-guidelines,
 │   STYLE_PRESETS, html-template, animation-patterns, layouts, layouts-swiss,
 │   swiss-layout-lock, themes, themes-swiss, components, checklist,
-│   critique-guide, voiceover-pipeline, video-export, ...
-├── scripts/ (12 files): fetch_images.py, html2pptx.js, render-video.js,
-│   export_deck_pdf.mjs, export_deck_pptx.mjs, validate-swiss-deck.mjs,
-│   extract-pptx.py, deploy.sh, export-pdf.sh, ...
-├── assets/: deck_index.html, ios_frame.jsx, narration_stage.jsx,
+│   ppt-skills-fusion, editable-pptx, presenter-mode, image-deck-mode,
+│   source-intake-adapter, critique-guide, voiceover-pipeline, video-export, ...
+├── scripts/ (13 files): fetch_images.py, source_intake.py, html2pptx.js,
+│   render-video.js, export_deck_pdf.mjs, export_deck_pptx.mjs,
+│   validate-swiss-deck.mjs, extract-pptx.py, deploy.sh, export-pdf.sh, ...
+├── assets/: deck_index.html, presenter-runtime.js, ios_frame.jsx, narration_stage.jsx,
 │   template.html, template-swiss.html, viewport-base.css, motion.min.js,
 │   bold-template-pack/ (34 templates), sfx/, screenshot-backgrounds/, canvas-fonts/
 └── design-philosophy.md

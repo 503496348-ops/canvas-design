@@ -17,7 +17,11 @@
 | 能力域 | 来源 | 输出格式 | 核心优势 |
 |--------|------|----------|----------|
 | 🖼️ 海报 / 宣传画 | Canvas Design | `.png` / `.pdf` | 设计哲学驱动，博物馆品质定位 |
-| 📊 演示幻灯片 | Canvas Design + frontend-slides | HTML deck → PDF / PPTX | 34套Bold Templates + 22种瑞士版式 |
+| 📊 演示幻灯片 | Canvas Design | HTML deck → PDF / PPTX | 34套Bold Templates + 22种瑞士版式 |
+| 🧩 原生可编辑PPTX | Canvas Design | `.pptx` | 960×540pt物理画布 + 原生shape/text/image |
+| 🎤 演讲者模式 | Canvas Design | HTML presenter view | 当前页/下一页/逐字稿/计时器，按 `S` 打开 |
+| 🧵 图片型社交Deck | Canvas Design | `.png` / `.jpg` / PDF | 小红书/公众号/课程卡片，一页一图 |
+| 📥 多源资料摄取 | Canvas Design | `source-brief.md` | URL/MD/TXT/HTML → 结构化 brief |
 | 📱 交互原型 | Canvas Design | iOS / Android mockup | `ios_frame.jsx` + 平铺多台可操作 |
 | 🎬 Motion动画 | Canvas Design | `.mp4` / `.gif` | `render-video.js` 25fps + 60fps + SFX/BGM |
 | 🎙️ 解说视频 | Canvas Design | `.mp4` | 解说稿 → TTS → 配音驱动动画 |
@@ -69,8 +73,11 @@ AI 会自动执行：
 # 导出 PDF
 bash scripts/export-pdf.sh ./my-deck.html ./output.pdf
 
-# 导出 PPTX
-node scripts/export_deck_pptx.mjs ./my-deck.html ./output.pptx
+# 导出 PPTX（多文件 slide deck → 原生可编辑 PPTX）
+node scripts/export_deck_pptx.mjs --slides ./slides --out ./output.pptx
+
+# 资料摄取：URL/Markdown/HTML/TXT → source-brief.md
+python3 scripts/source_intake.py --input ./article.md --out ./source-brief.md
 
 # 瑞士版式验证
 node scripts/validate-swiss-deck.mjs index.html
@@ -95,7 +102,7 @@ python3 scripts/gpt_image_api.py "赛博朋克风格的城市海报"
 
 AI 会在飞书内完成设计 → 截图确认 → 导出 PDF → 直接发送文件到飞书聊天窗口。
 
-支持的飞书触发词：`海报` `宣传画` `艺术品` `幻灯片` `PPT` `deck` `演示` `原型` `动画` `视频` `做个好看的` `推荐风格` `选个风格`
+支持的飞书触发词：`海报` `宣传画` `艺术品` `幻灯片` `PPT` `deck` `演示` `可编辑PPTX` `客户要改` `讲稿` `逐字稿` `计时器` `小红书图文` `知识卡片` `原型` `动画` `视频` `做个好看的` `推荐风格` `选个风格`
 
 ---
 
@@ -218,6 +225,11 @@ canvas-design/
 │   ├── image-prompts.md              # AI生图提示词
 │   ├── sfx-library.md                # 音效库
 │   ├── video-export.md               # 视频导出规范
+│   ├── ppt-skills-fusion.md          # PPT Skills 融合增强路线
+│   ├── editable-pptx.md              # 原生可编辑 PPTX 硬约束
+│   ├── presenter-mode.md             # 演讲者模式/逐字稿/计时器
+│   ├── image-deck-mode.md            # 图片型社交 Deck
+│   ├── source-intake-adapter.md      # 多源资料摄取入口
 │   ├── wanderix-ploc-template.json   # PLOC手账模板
 │   ├── wanderix-templates-registry.json  # 模板注册表
 │   └── ...                           # 更多专业文档
@@ -234,8 +246,9 @@ canvas-design/
 │   │       └── ...                   # 共34个模板目录
 │   ├── showcases/                    # 展示案例
 │   ├── director-notes-samples/       # 导演笔记示例
+│   ├── presenter-runtime.js          # 演讲者窗口运行时
 │   ├── animations.jsx                # After Effects 动画脚本
-│   └── frontend-slides-viewport-base.css  # 前端幻灯片基础样式
+│   └── viewport-base.css             # 幻灯片基础样式
 │
 └── scripts/                          # 工具脚本（25个）
     ├── export-pdf.sh                 # PDF 导出
@@ -243,6 +256,7 @@ canvas-design/
     ├── export_deck_pptx.mjs          # Deck → PPTX
     ├── html2pptx.js                  # HTML → PPTX 转换
     ├── extract-pptx.py               # PPTX 提取 + 风格重设计
+    ├── source_intake.py              # 多源资料 → source-brief.md
     ├── deploy.sh                     # Vercel 一键部署
     ├── render-video.js               # Motion 视频渲染（25fps/60fps）
     ├── render-video-seek.js          # 视频渲染（带定位）
@@ -259,18 +273,27 @@ canvas-design/
 
 ---
 
-## 🔗 融合来源
+## 🔗 融合状态
 
-本仓库是四家精华的超集融合（2026-06-19 验证）：
+本仓库是 Canvas Design 的统一产品化版本。2026-06-30 已完成 PPT Skills 增强，新增四个确定增量：
 
-| 来源 | 吸收内容 | 融合状态 |
+| 增强模块 | 吸收能力 | 融合状态 |
 |------|----------|----------|
-| **huashu-design** | 40种风格库、Motion Design引擎、品牌资产协议、反AI slop体系 | ✅ 完全集成 |
-| **frontend-slides** | 风格发现流程、34套Bold Templates、Vercel部署 | ✅ 完全集成 |
-| **GPT Image Gen** | 生图API封装、批量生成、风格控制 | ✅ 完全集成 |
-| **Wanderix** | PLOC手账Pipeline、肖像身份锚定、模板注册表 | ✅ 完全集成 |
+## 🔗 融合状态
 
-**融合验证**：canvas-design 的 24/24 个 references 完全一致、4/4 个 assets 全含。新增仅有 `assets/frontend-slides-viewport-base.css` 和 `references/frontend-slides-html-template.md`。
+本仓库是 Canvas Design 的统一产品化版本。2026-06-30 已完成 PPT Skills 增强，新增四个确定增量：
+
+| 增强模块 | 吸收能力 | 融合状态 |
+|------|----------|----------|
+| 原生可编辑 PPTX | 物理画布约束、HTML 硬规则、逐元素转 PowerPoint 原生对象 | ✅ 已落地 |
+| 演讲者模式 | 当前页/下一页/逐字稿/计时器/双窗口同步 | ✅ 已落地 |
+| 图片型社交 Deck | 小红书/公众号/课程卡片，一页一图，prompt 留痕 | ✅ 已落地 |
+| 多源资料摄取 | URL/MD/TXT/HTML → `source-brief.md`，其它资料走前置文档/转写工具 | ✅ 已落地 |
+| 旧有审美体系 | 34套 Bold Templates、22种瑞士版式、40种风格库、质量门禁 | ✅ 已内化 |
+
+**融合验证**：不保留外部竞品品牌作为运行依赖；AGPL 来源只吸收模式，不复制代码。新增能力入口见 `references/ppt-skills-fusion.md`.
+
+**融合验证**：不保留外部竞品品牌作为运行依赖；AGPL 来源只吸收模式，不复制代码。新增能力入口见 `references/ppt-skills-fusion.md`。
 
 ---
 

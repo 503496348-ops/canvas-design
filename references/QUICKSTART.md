@@ -8,6 +8,10 @@
 |------|----------|---------|
 | "帮我做一张海报" | 设计级单页视觉 | .png / .pdf |
 | "帮我做个PPT/deck" | HTML幻灯片 | .html → .pdf / .pptx |
+| "我要客户能改的PPT" | 原生可编辑PPTX | .pptx（文字/图形可编辑） |
+| "我要线下分享，带讲稿" | 演讲者模式 | HTML + 当前页/下一页/逐字稿/计时器 |
+| "做成小红书图文/知识卡片" | 图片型社交Deck | .png/.jpg 组图 → PDF/PPTX |
+| "把这个链接/文章做成PPT" | 资料摄取→结构化brief→设计 | source-brief.md → deck |
 | "帮我做个App原型" | 可交互界面mockup | .html |
 | "帮我做段动画" | Motion动画 | .mp4 / .gif |
 
@@ -27,7 +31,17 @@
 2. **做 2 页示例**发给你确认方向（封面 + 一个内容页）
 3. **你确认后**批量推剩下 N-2 页
 4. **逐页截图验证**确保字体加载、布局正确
-5. **导出 PDF** 发给你
+5. **导出 PDF/PPTX/HTML** 发给你
+
+### 四条新路线
+
+| 你要的是 | 走哪条路线 | 注意 |
+|---|---|---|
+| 最好看，能网页展示 | HTML Deck Mode | 视觉自由度最高 |
+| 客户能在 PowerPoint 里改字改图 | Editable PPTX Mode | 从一开始遵守 PPTX 约束 |
+| 现场演讲不忘词不超时 | Presenter Mode | 每页写 notes，按 S 开讲者窗口 |
+| 手机传播/社交图文 | Image Deck Mode | 一页一图，少字高密度 |
+| 长文/视频/网页转PPT | Source Intake | 先产出 source-brief.md |
 
 ### 你能控制什么
 
