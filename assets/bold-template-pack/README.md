@@ -1,7 +1,7 @@
 # Bold Template Pack
 
 This pack brings the `beautiful-html-templates` design systems into the
-`frontend-slides` skill without making them the default for every deck.
+Canvas Design deck workflow without making them the default for every deck.
 
 ## What To Read
 
@@ -62,7 +62,7 @@ from", or user requirement notes on the slide itself.
 
 When generating final slides:
 
-- Keep `frontend-slides` output as one self-contained HTML file.
+- Keep deck output as one self-contained HTML file.
 - Include the full contents of `viewport-base.css`.
 - Generate every deck as a fixed 1920×1080 stage scaled uniformly to the
   viewport. This applies even if the source template was originally

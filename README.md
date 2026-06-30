@@ -44,12 +44,12 @@ git clone https://github.com/503496348-ops/canvas-design.git ~/.hermes/skills/ca
 ```bash
 cd ~/.hermes/skills/canvas-design
 
-# Node.js 工具链（渲染/导出/验证）
+# Node.js 工具链（渲染/导出/验证/PPTX）
 npm install
+npx playwright install chromium
 
-# Python 工具链（PPT提取/生图/流水线）
-pip install -r requirements.txt  # 如果存在
-pip install python-pptx Pillow   # PPT提取 + 图像处理
+# Python 工具链（PPT提取/生图/流水线，按实际任务安装）
+pip install python-pptx Pillow
 ```
 
 ### 第3步：第一次使用
@@ -204,7 +204,7 @@ canvas-design/
 ├── SKILL.md                          # AI 内部执行规范（开发者必读）
 ├── README.md                         # 本文件
 │
-├── references/                       # 设计规范文档库（45篇）
+├── references/                       # 设计规范文档库（54项）
 │   ├── QUICKSTART.md                 # 快速上手指南
 │   ├── design-styles.md              # 40种风格库
 │   ├── layouts.md                    # 10种基础布局骨架
@@ -250,7 +250,7 @@ canvas-design/
 │   ├── animations.jsx                # After Effects 动画脚本
 │   └── viewport-base.css             # 幻灯片基础样式
 │
-└── scripts/                          # 工具脚本（25个）
+└── scripts/                          # 工具脚本（27项）
     ├── export-pdf.sh                 # PDF 导出
     ├── export_deck_pdf.mjs           # Deck → PDF（Node.js）
     ├── export_deck_pptx.mjs          # Deck → PPTX
@@ -273,17 +273,11 @@ canvas-design/
 
 ---
 
-## 🔗 融合状态
+## 🔗 产品化增强状态
 
-本仓库是 Canvas Design 的统一产品化版本。2026-06-30 已完成 PPT Skills 增强，新增四个确定增量：
+本仓库是 Canvas Design 的统一产品化版本。2026-06-30 完成 PPT 生产链路增强，新增四个确定增量：
 
-| 增强模块 | 吸收能力 | 融合状态 |
-|------|----------|----------|
-## 🔗 融合状态
-
-本仓库是 Canvas Design 的统一产品化版本。2026-06-30 已完成 PPT Skills 增强，新增四个确定增量：
-
-| 增强模块 | 吸收能力 | 融合状态 |
+| 增强模块 | 产品化能力 | 状态 |
 |------|----------|----------|
 | 原生可编辑 PPTX | 物理画布约束、HTML 硬规则、逐元素转 PowerPoint 原生对象 | ✅ 已落地 |
 | 演讲者模式 | 当前页/下一页/逐字稿/计时器/双窗口同步 | ✅ 已落地 |

@@ -326,12 +326,12 @@ HTML结构：`<div class="slide">` × N → `export-pdf.sh` 直接兼容。
 ```
 canvas-design/
 ├── SKILL.md
-├── references/ (45 files, 含QUICKSTART.md): design-styles, brand-asset-protocol, content-guidelines,
+├── references/ (54 files, 含QUICKSTART.md): design-styles, brand-asset-protocol, content-guidelines,
 │   STYLE_PRESETS, html-template, animation-patterns, layouts, layouts-swiss,
 │   swiss-layout-lock, themes, themes-swiss, components, checklist,
 │   ppt-skills-fusion, editable-pptx, presenter-mode, image-deck-mode,
 │   source-intake-adapter, critique-guide, voiceover-pipeline, video-export, ...
-├── scripts/ (13 files): fetch_images.py, source_intake.py, html2pptx.js,
+├── scripts/ (27 files): fetch_images.py, source_intake.py, html2pptx.js,
 │   render-video.js, export_deck_pdf.mjs, export_deck_pptx.mjs,
 │   validate-swiss-deck.mjs, extract-pptx.py, deploy.sh, export-pdf.sh, ...
 ├── assets/: deck_index.html, presenter-runtime.js, ios_frame.jsx, narration_stage.jsx,
@@ -347,14 +347,14 @@ canvas-design/
 
 ---
 
-## 融合来源与竞品对标
+## 能力边界与产品化说明
 
-### 能力来源（内部追溯，非对外品牌）
-| 能力模块 | 原始来源 | 融合内容 | 状态 |
-|---------|---------|---------|------|
-| 核心引擎 | 内部原创 | 设计哲学驱动 + 40种风格库 + Motion引擎 + 品牌资产协议 | ✅ 100% |
-| 瑞士版式 | 内部整合 | 22个S编号版式 + 质量门禁 + validate脚本 + 4个模板资产 | ✅ 100% |
-| Bold Templates | 内部整合 | 34个模板 + deck-stage.js运行时 + 风格发现流程 + PPT转换 | ✅ 100% |
+### 能力模块
+| 能力模块 | 产品化内容 | 状态 |
+|---------|-------------|------|
+| 核心引擎 | 设计哲学驱动 + 40种风格库 + Motion引擎 + 品牌资产协议 | ✅ 100% |
+| 瑞士版式 | 22个S编号版式 + 质量门禁 + validate脚本 + 4个模板资产 | ✅ 100% |
+| Bold Templates | 34个模板 + deck-stage.js运行时 + 风格发现流程 + PPT转换 | ✅ 100% |
 
 ### canvas-design 独有优势
 - 设计哲学宣言驱动（先写美学运动，再视觉表达）
