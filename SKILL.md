@@ -366,3 +366,7 @@ canvas-design/
 
 ### 仓库地址
 - `https://github.com/503496348-ops/canvas-design`
+## 2026-07-02 融合增强
+
+- 艺游未境新增商业信息图密度评估器：按模块层级、指标锚点、结构化 bullet 与占位符风险评分。
+
