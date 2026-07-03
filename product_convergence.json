@@ -1,0 +1,40 @@
+{
+  "repo": "canvas-design",
+  "entrypoints": [
+    "install.sh"
+  ],
+  "smoke_targets": [
+    "scripts/check_reference.py",
+    "scripts/product_convergence_gate.py"
+  ],
+  "known_external_reference_files": [
+    "assets/bold-template-pack/templates/8-bit-orbit/design.md",
+    "assets/bold-template-pack/templates/biennale-yellow/design.md",
+    "assets/bold-template-pack/templates/block-frame/design.md",
+    "assets/bold-template-pack/templates/blue-professional/design.md",
+    "assets/bold-template-pack/templates/bold-poster/design.md",
+    "assets/bold-template-pack/templates/capsule/design.md",
+    "assets/bold-template-pack/templates/cartesian/design.md",
+    "assets/bold-template-pack/templates/daisy-days/design.md",
+    "assets/bold-template-pack/templates/daisy-days/preview.md",
+    "assets/bold-template-pack/templates/long-table/design.md",
+    "assets/bold-template-pack/templates/mat/design.md",
+    "assets/bold-template-pack/templates/mat/preview.md",
+    "assets/bold-template-pack/templates/neo-grid-bold/design.md",
+    "assets/bold-template-pack/templates/pink-script/design.md",
+    "assets/bold-template-pack/templates/raw-grid/design.md",
+    "assets/bold-template-pack/templates/sakura-chroma/design.md",
+    "docs/COMPETITIVE_ANALYSIS.md",
+    "modules/controlnet/conditioning_pipeline.py",
+    "modules/controlnet/control_fusion.py",
+    "modules/controlnet/control_processors.py",
+    "references/STYLE_PRESETS.md",
+    "references/frontend-slides-html-template.md",
+    "references/html-template.md",
+    "references/layouts-swiss.md",
+    "references/poster-fixed-ratio-pitfalls.md",
+    "scripts/batch_generator.py",
+    "scripts/product_convergence_gate.py"
+  ],
+  "policy": "External/fusion references are allowed only when explicitly reviewed here; new fusion work must add a smoke target or entrypoint wiring."
+}
