@@ -7,12 +7,13 @@
   "scripts": {
     "setup": "node scripts/setup.mjs",
     "doctor": "node scripts/doctor.mjs",
-    "test": "bash tests/one-click-setup-contract.sh && bash tests/smoke-pptx-export.sh",
+    "test": "bash tests/one-click-setup-contract.sh && bash tests/smoke-pptx-export.sh && python3 -m pytest tests/test_one_click_open_box.py -q",
     "test:pptx": "bash tests/smoke-pptx-export.sh",
     "test:one-click": "bash tests/one-click-setup-contract.sh",
     "check:syntax": "node --check scripts/setup.mjs && node --check scripts/doctor.mjs && node --check scripts/export_deck_pptx.mjs && node --check scripts/html2pptx.js && node --check assets/presenter-runtime.js && node --check scripts/render-video.js",
     "export:pptx": "node scripts/export_deck_pptx.mjs",
-    "verify:swiss": "node scripts/validate-swiss-deck.mjs"
+    "verify:swiss": "node scripts/validate-swiss-deck.mjs",
+    "smoke": "python3 scripts/smoke.py"
   },
   "dependencies": {
     "playwright": "^1.55.1",
