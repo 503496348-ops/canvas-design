@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { execFileSync, spawnSync } from 'node:child_process';
+import { collectStyleGuardReport } from './anti_ai_sanity.mjs';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -65,6 +66,14 @@ else bad('pptxgenjs', '未安装', '运行 npm run setup 或 npm ci');
 
 if (existsSync(join(root, 'node_modules', 'playwright'))) ok('playwright', '已安装');
 else bad('playwright', '未安装', '运行 npm run setup 或 npm ci');
+
+const styleReport = collectStyleGuardReport(root);
+for (const item of styleReport.checks || []) {
+  if (!item.ok) {
+    console.log(`⚠️ ${item.name}：${item.fix || '建议复盘风格风控规则'} (sample: ${(item.sample_files || []).slice(0,2).join(', ')})`);
+  }
+}
+
 
 try {
   const output = execFileSync('npx', ['playwright', 'install', '--dry-run', 'chromium'], {
