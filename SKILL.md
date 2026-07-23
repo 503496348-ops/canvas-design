@@ -315,7 +315,7 @@ template.html 的 `<title>` 默认是 `[必填] 替换为 PPT 标题 · Deck Tit
 ### 轻量Deck模板（可复制起点）
 HTML结构：`<div class="slide">` × N → `export-pdf.sh` 直接兼容。
 最小骨架：1920×1080舞台 + transform缩放 + 键盘/滚轮导航。
-参考：`/root/.hermes/output/prompt-deck-v4.html` 作为已验证的起点。
+参考：`references/lightweight-deck-skeleton.html` 作为已验证的起点。
 
 ---
 ## 资源导览
