@@ -5,17 +5,19 @@ license: MIT
 metadata:
   author: 503496348-ops
   version: 1.0.0
-triggers:
-  - "画布"
-  - "图片生成"
-  - "HTML Deck"
-  - "演示文稿"
-  - "参考图"
-  - "canvas"
-  - "幻灯片"
 ---
 
 # Canvas Design — 视觉创作工具
+
+## 触发条件
+
+- "画布"
+- "图片生成"
+- "HTML Deck"
+- "演示文稿"
+- "参考图"
+- "canvas"
+- "幻灯片"
 
 AI 图片生成 + HTML 演示文稿制作 + 参考图质量检查。
 
