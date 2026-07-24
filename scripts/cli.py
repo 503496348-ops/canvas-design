@@ -3,7 +3,7 @@
 import argparse, json, sys, os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-def cmd_generate(args):
+def cmd_generate(args) -> None:
     """Generate image via GPT Image API."""
     from scripts.gpt_image_api import get_api_key, get_config, submit_task
     config = get_config()
@@ -15,7 +15,7 @@ def cmd_generate(args):
         "status": "ready"
     }, ensure_ascii=False, indent=2))
 
-def cmd_deck(args):
+def cmd_deck(args) -> None:
     """Generate HTML deck."""
     print(json.dumps({
         "template": args.template or "default",
@@ -24,23 +24,23 @@ def cmd_deck(args):
         "status": "ready"
     }, ensure_ascii=False, indent=2))
 
-def cmd_check(args):
+def cmd_check(args) -> None:
     """Check reference images."""
     from scripts.check_reference import ReferenceDiagnostic
     diag = ReferenceDiagnostic()
     print(json.dumps({"diagnostic": str(diag)[:200], "status": "ok"}, ensure_ascii=False, indent=2))
 
-def cmd_pipeline(args):
+def cmd_pipeline(args) -> None:
     """Run wanderix pipeline."""
     from scripts.wanderix_pipeline_engine import load_registry
     registry = load_registry()
     print(json.dumps({"templates": len(registry) if isinstance(registry, (list, dict)) else 0, "status": "ok"}, ensure_ascii=False, indent=2))
 
 
-def cmd_info(args):
+def cmd_info(args) -> None:
     """Show product info."""
     print(json.dumps({"product": "Canvas Design", "type": "视觉创作工具", "status": "ok"}, ensure_ascii=False, indent=2))
-def main():
+def main() -> None:
     p = argparse.ArgumentParser(description='Canvas Design 视觉创作工具')
     sub = p.add_subparsers(dest='command')
 
